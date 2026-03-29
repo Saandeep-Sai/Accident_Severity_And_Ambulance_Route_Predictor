@@ -20,11 +20,15 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          # Install huggingface_hub CLI for xet support
           pip install -q huggingface_hub[hf_xet]
-
-          # Login
-          huggingface-cli login --token $HF_TOKEN
-
-          # Upload entire repo to the Space
-          huggingface-cli upload saandeepsai/Accident_severity_predictor . . --repo-type space
+          python -c "
+          from huggingface_hub import HfApi
+          api = HfApi()
+          api.upload_folder(
+              folder_path='.',
+              repo_id='saandeepsai/Accident_severity_predictor',
+              repo_type='space',
+              ignore_patterns=['.git*', '.venv', '__pycache__', '*.pyc'],
+          )
+          print('Upload complete!')
+          "
