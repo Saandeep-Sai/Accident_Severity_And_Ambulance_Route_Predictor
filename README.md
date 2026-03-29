@@ -3,9 +3,9 @@ title: Proactive AI Emergency Response
 emoji: 🚨
 colorFrom: red
 colorTo: blue
-sdk: streamlit
-sdk_version: 1.29.0
-app_file: dashboard.py
+sdk: gradio
+sdk_version: 5.23.0
+app_file: app.py
 pinned: true
 license: mit
 short_description: AI-powered road accident detection & emergency dispatch
