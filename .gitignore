@@ -1,0 +1,30 @@
+# Virtual environment
+.venv/
+__pycache__/
+*.pyc
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Environment secrets
+.env
+
+# Large raw data (not needed for dashboard — processed CSVs are included)
+data/telemetry/allcars.csv
+data/telemetry/v2.csv
+data/driving_behavior/sensor_raw.csv
+data/driving_behavior/features_14.csv
+data/accidents/Road.csv
+data/hospital/bed_occupancy_data.csv
+data/images/training/
+
+# Local run scripts (not needed on HF)
+run_all.bat
+run_all.sh
+run_all.ps1
+
+# Analysis outputs
+_analysis_output.txt
+_results_*.json
